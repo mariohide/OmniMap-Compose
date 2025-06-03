@@ -2,6 +2,7 @@ plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
     alias(libs.plugins.compose.compiler)
+    id("maven-publish")
 }
 
 afterEvaluate {
@@ -51,4 +52,18 @@ dependencies {
     api(libs.gaode.map3d)
     // 高德地图：搜索相关API，路径规划需要用到这里面的类
     api(libs.gaode.search)
+}
+
+afterEvaluate {
+    publishing {
+        publications {
+            create<MavenPublication>("release") {
+                groupId = "com.github.mariohide" // 替换为您的 GitHub 用户名
+                artifactId = "amap-compose" // 替换为您的模块名称，例如 "OmniMap-Compose" 或 "amap-compose"
+                version = "1.0.0" // 您希望的版本号，JitPack 会使用 Git Tag
+
+                from(components["release"])
+            }
+        }
+    }
 }
