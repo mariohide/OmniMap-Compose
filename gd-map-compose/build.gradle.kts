@@ -5,10 +5,6 @@ plugins {
     id("maven-publish")
 }
 
-afterEvaluate {
-    apply(from = "../gradle/release/gaode_publish.gradle")
-}
-
 android {
     namespace = "com.melody.map.gd_compose"
     compileSdk = libs.versions.compile.sdk.version.get().toInt()

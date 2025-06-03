@@ -5,10 +5,6 @@ plugins {
     alias(libs.plugins.compose.compiler)
 }
 
-afterEvaluate {
-    apply(from = "../gradle/release/baidu_publish.gradle")
-}
-
 android {
     namespace = "com.melody.map.baidu_compose"
     compileSdk = libs.versions.compile.sdk.version.get().toInt()
