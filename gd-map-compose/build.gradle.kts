@@ -51,7 +51,7 @@ afterEvaluate {
         publications {
             create<MavenPublication>("release") {
                 groupId = "com.github.mariohide" // 替换为您的 GitHub 用户名
-                artifactId = "amap-compose" // 替换为您的模块名称，例如 "OmniMap-Compose" 或 "amap-compose"
+                artifactId = "amap" // 替换为您的模块名称，例如 "OmniMap-Compose" 或 "amap-compose"
                 version = "1.0.0" // 您希望的版本号，JitPack 会使用 Git Tag
 
                 from(components["release"])
