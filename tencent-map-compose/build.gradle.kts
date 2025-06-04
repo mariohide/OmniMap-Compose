@@ -3,6 +3,7 @@ plugins {
     id("org.jetbrains.kotlin.android")
     id("kotlin-parcelize")
     alias(libs.plugins.compose.compiler)
+    id("maven-publish")
 }
 
 android {
@@ -57,4 +58,18 @@ dependencies {
     api(libs.tencent.map.vector.sdk)
     // 地图组件库，包括小车平移、点聚合等组件功能。
     api(libs.tencent.map.sdk.utilities)
+}
+
+afterEvaluate {
+    publishing {
+        publications {
+            create<MavenPublication>("release") {
+                groupId = "com.github.mariohide" // 替换为您的 GitHub 用户名
+                artifactId = "tencentmap-compose" // 替换为您的模块名称，例如 "OmniMap-Compose" 或 "amap-compose"
+                version = "1.0.0" // 您希望的版本号，JitPack 会使用 Git Tag
+
+                from(components["release"])
+            }
+        }
+    }
 }

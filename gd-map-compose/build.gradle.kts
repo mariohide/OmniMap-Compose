@@ -43,11 +43,7 @@ dependencies {
     implementation(platform(libs.compose.bom))
     implementation(libs.androidx.compose.ui.ui)
     implementation(libs.lifecycle.runtime.ktx)
-
-    // 高德地图3d
-    api(libs.gaode.map3d)
-    // 高德地图：搜索相关API，路径规划需要用到这里面的类
-    api(libs.gaode.search)
+    api(libs.amap)
 }
 
 afterEvaluate {
