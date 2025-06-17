@@ -24,7 +24,7 @@ baidu_location_map = "9.6.4"
 tencent_location_map = "7.5.2"
 tencent_vector_map = "5.1.0"
 tencent_utils_map = "1.0.9.1"
-amap = "10.1.300_loc6.4.9_sea9.7.4"
+amap = "10.0.800_loc6.4.5_sea9.7.2"
 
 # publish maven config
 publish_maven_group_id = "io.github.TheMelody"

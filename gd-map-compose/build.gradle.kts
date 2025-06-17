@@ -11,7 +11,7 @@ android {
 
     defaultConfig {
         minSdk = libs.versions.min.sdk.version.get().toInt()
-        lint.targetSdk =  libs.versions.target.sdk.version.get().toInt()
+        lint.targetSdk = libs.versions.target.sdk.version.get().toInt()
         consumerProguardFiles("consumer-rules.pro")
     }
     buildFeatures {
@@ -20,7 +20,10 @@ android {
     buildTypes {
         getByName("release") {
             isMinifyEnabled = false
-            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
         }
     }
     kotlinOptions {
@@ -52,7 +55,7 @@ afterEvaluate {
             create<MavenPublication>("release") {
                 groupId = "com.github.mariohide" // 替换为您的 GitHub 用户名
                 artifactId = "amap" // 替换为您的模块名称，例如 "OmniMap-Compose" 或 "amap-compose"
-                version = "1.0.0" // 您希望的版本号，JitPack 会使用 Git Tag
+                version = "1.0.1" // 您希望的版本号，JitPack 会使用 Git Tag
 
                 from(components["release"])
             }
